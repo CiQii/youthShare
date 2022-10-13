@@ -3,7 +3,7 @@ name: 中青邀请阅读
 on:
   workflow_dispatch:
   schedule:
-     - cron: '0 0-23/3 * * *'
+     - cron: '*/30 0-23/3 * * *'
 jobs:
   build:
     runs-on: ubuntu-latest    
@@ -20,8 +20,6 @@ jobs:
         run: |
           cd ~/youthShare
           npm install
-          npm install cron
-          npm install request
           npm install md5-node
       - name: '运行 【中青邀请阅读】'
         run: |
